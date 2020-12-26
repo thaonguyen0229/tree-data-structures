@@ -1,7 +1,6 @@
 from AVL import AVL
 from BTree import BTree
 treeType = input("Enter AVL or BTree: ")
-
 while treeType != "AVL" and treeType != "BTree":
     treeType = input("Enter AVL or BTree: ")
 

@@ -3,11 +3,51 @@ class AVL:
         self.value = value
         self.left = None
         self.right = None
-    
+    '''
     def __str__(self):
         leftS= '' if self.left == None else str(self.left) + ', '
         rightS = '' if self.right == None else ', ' + str(self.right) 
-        return leftS + str(self.value) + rightS
+        return leftS + str(self.value) + rightS 
+
+    def __str__(self):
+        result = "_ " + str(self.value) + "\n"
+        traverseL = self.left
+        n = 1
+        while traverseL != None:
+            result += " |" * n + "_ "
+            result += str(traverseL.value) + "\n"
+            traverseL = traverseL.left
+            n += 1
+        traverseR = self.right
+        n = 1
+        while traverseR != None:
+            result += " |" * n + "_ "
+            result += str(traverseR.value) + "\n"
+            traverseR = traverseR.right
+            n += 1
+        return result'''
+    
+    def __str__(self):
+        result = "- " + str(self.value)
+        if self.left != None:
+            leftS = str(self.left)
+            result += "\n  |"
+            for s in leftS:
+                result += s
+                if s == '\n': result += "  |"
+
+        if self.right != None:
+            rightS = str(self.right)
+            result += "\n  "
+            if self.left == None: result += "|"
+            else: result += "`"
+            for s in rightS:
+                result += s
+                if s == '\n': result += "   "
+        return result
+
+
+
 
     def delete(self, value):
         self.deleteValue(value)
