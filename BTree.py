@@ -3,9 +3,21 @@ class BTree:
         self.keys=[value]
         self.children=[None,None]
         self.parent=parent #parent is None or a Node
+    
+    def inorder(self):
+        result = ""
+        for i in range(0, len(self.keys)):
+            if self.children[i] != None:
+                result += self.children[i].inorder() + ", "
+            result += str(self.keys[i]) + ", "
+
+        if self.children[-1] != None:
+            result += self.children[-1].inorder()
+        else: result = result[0: len(result) - 2]
+
+        return result
 
     def __str__(self):
-        
         result = ""
         for i in range(0, len(self.keys)):
             if self.children[i] != None:
@@ -16,8 +28,6 @@ class BTree:
             result += str(self.children[-1])
         else: result = result[0: len(result) - 2]
 
-        if self.parent == None:
-            result = "B tree has " + str(self.getSize()) + " elements:\n" + result
         return result
 
     def insert(self, value):

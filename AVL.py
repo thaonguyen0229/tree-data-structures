@@ -3,30 +3,12 @@ class AVL:
         self.value = value
         self.left = None
         self.right = None
-    '''
-    def __str__(self):
-        leftS= '' if self.left == None else str(self.left) + ', '
-        rightS = '' if self.right == None else ', ' + str(self.right) 
-        return leftS + str(self.value) + rightS 
-
-    def __str__(self):
-        result = "_ " + str(self.value) + "\n"
-        traverseL = self.left
-        n = 1
-        while traverseL != None:
-            result += " |" * n + "_ "
-            result += str(traverseL.value) + "\n"
-            traverseL = traverseL.left
-            n += 1
-        traverseR = self.right
-        n = 1
-        while traverseR != None:
-            result += " |" * n + "_ "
-            result += str(traverseR.value) + "\n"
-            traverseR = traverseR.right
-            n += 1
-        return result'''
     
+    def inorder(self):
+        leftS= '' if self.left == None else self.left.inorder() + ', '
+        rightS = '' if self.right == None else ', ' + self.right.inorder()
+        return leftS + str(self.value) + rightS
+
     def __str__(self):
         result = "- " + str(self.value)
         if self.left != None:

@@ -18,7 +18,10 @@ if treeType == "AVL":
 else:
     tree = BTree(value)
 
+print(type(tree))
 print(tree)
+print(tree.inorder())
+
 new = input("Enter an integer or X to quit: ")
 while new != "X":
     try:
@@ -29,5 +32,6 @@ while new != "X":
         continue
     tree.insert(new)
     print(tree)
+    print(tree.inorder())
     new = input("Enter an integer or X to quit: ")
 
