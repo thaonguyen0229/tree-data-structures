@@ -1,4 +1,4 @@
-# Tree Data Structure
+# Tree Data Structures
 - Implementation of AVL tree and B tree (2,4 tree) in Python
 ## Testing program
 - File **testing.py** is an executable interactive program for simple visualization of AVL tree and B tree
