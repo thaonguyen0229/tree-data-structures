@@ -4,7 +4,7 @@
 - File **testing.py** is an executable interactive program for simple visualization of AVL tree and B tree
 - Make sure **AVL.py** and **BTree.py** are in the same directory as **testing.py** before execution
 ### Examples
-Choose AVL tree or B Tree
+Choose AVL tree or B Tree:
 ```
 Enter AVL or BTree: AVL
 ```
