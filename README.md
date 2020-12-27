@@ -1,5 +1,5 @@
 # Tree Data Structure
-- Implementation of AVL (Adelson-Velskii and Landis) tree and B tree (2,4 tree) in Python
+- Implementation of AVL tree and B tree (2,4 tree) in Python
 ## Testing program
 - File **testing.py** is an executable interactive program for simple visualization of AVL tree and B tree
 - Make sure **AVL.py** and **BTree.py** are in the same directory as **testing.py** before execution
