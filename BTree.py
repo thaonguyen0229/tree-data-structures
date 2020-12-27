@@ -14,20 +14,19 @@ class BTree:
         if self.children[-1] != None:
             result += self.children[-1].inorder()
         else: result = result[0: len(result) - 2]
-
         return result
 
     def __str__(self):
-        result = ""
-        for i in range(0, len(self.keys)):
-            if self.children[i] != None:
-                result += str(self.children[i]) + ", "
-            result += str(self.keys[i]) + ", "
-
-        if self.children[-1] != None:
-            result += str(self.children[-1])
-        else: result = result[0: len(result) - 2]
-
+        result = "-\t" + str(self.keys)
+        if not self.isExternal():
+            for c in range(len(self.children)):
+                cString = str(self.children[c])
+                result += "\n\t\t"
+                if c == len(self.children) - 1: result += "`"
+                else: result += "|"
+                for s in cString:
+                    result += s
+                    if s == "\n": result += "\t\t|"
         return result
 
     def insert(self, value):

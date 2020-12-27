@@ -18,7 +18,6 @@ if treeType == "AVL":
 else:
     tree = BTree(value)
 
-print(type(tree))
 print(tree)
 print(tree.inorder())
 

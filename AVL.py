@@ -13,7 +13,9 @@ class AVL:
         result = "- " + str(self.value)
         if self.left != None:
             leftS = str(self.left)
-            result += "\n  |"
+            result += "\n  "
+            if self.right == None: result += "`"
+            else: result += "|"
             for s in leftS:
                 result += s
                 if s == '\n': result += "  |"
@@ -21,8 +23,7 @@ class AVL:
         if self.right != None:
             rightS = str(self.right)
             result += "\n  "
-            if self.left == None: result += "|"
-            else: result += "`"
+            result += "`"
             for s in rightS:
                 result += s
                 if s == '\n': result += "   "
